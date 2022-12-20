@@ -1,13 +1,10 @@
-function firstFunc(num){
-    console.log(num);
-    return function(){
-        return console.log(num + num);
-    }
+function sum(numA) {
+    return function(numB) {
+        return numA + numB;
+    };
 }
 
-let numA = 4;
+let resultFunc = sum(5);
+console.log( resultFunc(0), resultFunc(1), resultFunc(2) );
 
-const resultFunc = firstFunc(numA);
-
-resultFunc();
-
+console.log( sum(1)(2), sum(1)(2), sum(23)(2) );
